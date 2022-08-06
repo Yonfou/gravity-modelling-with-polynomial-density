@@ -12,7 +12,9 @@ We provide a shell model for reference.
 
 Step 1:  Establish a density model and generalize the model files required in 'Para.txt'. 
             For example, the Matlab file 'shell\cook_shell.m'  helps one to established a shell model.
+            
 Step 2: Modify the file path of 'Para.txt' in the source code 'ReadIn.f90' according to your own needs.
+
 Step 3: Run the codes.
 
 
