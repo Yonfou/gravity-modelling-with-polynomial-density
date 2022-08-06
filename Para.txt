@@ -1,0 +1,23 @@
+!==============================================================
+                                                           Input     parameters
+!==============================================================
+'Shell'                                               Density model name
+2,2                                                     Number of Gauss nodes in latidutue and longitude (NG1,NG2)
+3.5                                                     Distance-size ratio (Norm)
+1000.0                                               Ration  of the dimension of the original tesseroid to that of the subelement. It controls the accuracy at surface observation points (alpha)
+360                                                    Number of elements in the longitudinal direction for the source region (NSL)
+180                                                    Number of elements in the latitudinal direction for the source region (NSF)
+360                                                    Number of elements in the longitudinal direction for the computational domain (NPL)
+180                                                    Number of elements in the latitudinal direction for the computational domain (NPF)
+1                                                        Number of elements in the radial direction for the computational domain (NPR)
+6371.                                                 Mean Earth radius (km) (REarth)
+'shell\source_longitude.dat'                      File that contains NSL equally-spaced sampling points in the longitudinal direction for the source region (SL)
+'shell\source_latitude.dat'                         File that contains the latitutes of the center of each element (SF) and the interval (dSF) in the latitudinal direction for the source region. Each row has 2 elements and there are NSF rows.
+'shell\source_number_in_depth.dat'         File that contains the total number of sampling points in the radial direction at different latitudes for the source region. Each row has 1 elements and there are NSF rows. (NR)
+'shell\source_depth.dat'                            File that contains the radial coordinates of the center of each element (SR) and the interval (dSR) in the radial direction at different latitudes for the source region. Note that the sampling points are the same along the longitudinal direction. Each row has 2 elements and there are NSR(=MAX(NR))×NSF rows. The outermost loop is r.
+'shell\polynomial_degree.dat'                   File that contains the degree of polynomial function used in each element along the radial direction. Each row has NSF elements and there are NSR rows. (NP)
+'shell\observation.dat'                               File that contains the location (r,φ,λ) of the observation points, the inner loop is λ and the outermost loop is r. Note that the interval in the longitudinal direction must be the same as those in the source region. Each row has 3 elements and there are NPL*NPF*NPR rows. (PR,PF,PL)
+'shell\density_model.dat'                           File that contains the dentisity of the model. Each row has 1 elements and there are (MAX(NP)+1)*NSR*NSF*NSL rows. The inner loop is λ and the outermost loop is NP. (Ro)
+'shell\gravity_3D.dat'                                 File that stores the results. Each row has 13 elements, that is, r, φ, λ, gravitational potential, three components of gravitational vector, six components of gradient tensor, and there are NPR*NPF*NPL rows.
+!==============================================================
+
